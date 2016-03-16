@@ -1,5 +1,5 @@
-Coyote GameHub
-==============
+KST Content Management and Website Rebuild
+===========================================
 
 About this Project
 ------------------
