@@ -55,8 +55,5 @@ Developer notes
 ---------------
 
 
-
-
-Contributions
 	
-	README was templated from a modified version of CSUSB CSE Club's Website Project README.
+	Contributions: README was templated from a modified version of lthai423/KST_Rebuild
