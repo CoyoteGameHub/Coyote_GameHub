@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Coyote GameHub
 ==============
 
@@ -60,3 +61,7 @@ Developer notes
 Contributions
 	
 	README was templated from a modified version of CSUSB CSE Club's Website Project README.
+=======
+# beta
+Beta for CSE 594
+>>>>>>> parent of dea2ceb... README and Default Django Project
