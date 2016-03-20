@@ -205,25 +205,25 @@
                 </div>
                 <div class="col-sm-6 col-md-offset-1 m-t-60-xs-max">
                   <div class="col-inner">
-                    <form auction='/signup/' method="POST" class="_default" id="contactForm" novalidate="novalidate">
-                      <div class="form-group required">
+                    <form action='/signup/' method="POST" class="_default">{% csrf_token %}
+                      <div data-role="fieldcontain" class="form-group required">
                         <label class="form-label" for="contactName">Your name</label>
                         <input class="form-control" id="contactName" type="text" name="name">
                       </div>
-                      <div class="form-group required">
+                      <div data-role="fieldcontain" class="form-group required">
                         <label class="form-label" for="contactEmail">Email address</label>
                         <input class="form-control" id="contactEmail" type="text" name="email">
                       </div>
-                      <div class="form-group required">
+                      <div data-role="fieldcontain" class="form-group required">
                         <label class="form-label" for="contactPassword">Password</label>
                         <input class="form-control" type="password" id="contactPassword" name="password"></input>
                       </div>
-                      <div class="form-group required">
+                      <div data-role="fieldcontain" class="form-group required">
                         <label class="form-label" for="contactConfirmPassword">Confirm Password</label>
                         <input class="form-control" type="password" id="contactConfirmPassword" name="confirmPassword"></input>
                       </div>
                       <div class="btn-wrap">
-                        <button type="submit" name="submit" class="btn btn-primary btn-block">Sign Up Now</button>
+                        <button type="submit" name="submit"  class="btn btn-primary btn-block">Sign Up Now</button>
                       </div>
                       <div class="form-notify"></div>
                     </form> <!-- #contactForm -->
@@ -308,7 +308,7 @@
                 </div>
                 <div class="col-sm-6 col-md-offset-1 m-t-60-xs-max">
                   <div class="col-inner">
-                    <form action='/auth/' method='POST' class="_default" id="contactForm" novalidate="novalidate">
+                    <form action='/auth/' method='POST' class="_default">{% csrf_token %}
                       <div class="form-group required">
                         <label class="form-label" for="lginEmail">Email Address</label>
                         <input class="form-control" id="loginEmail" type="text" name="loginEmail">
