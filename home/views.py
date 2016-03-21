@@ -7,9 +7,15 @@ from django.contrib.auth.models import User
 def index(request):
     return render(request, 'home/index.html')
 
+<<<<<<< HEAD
 def login_and_auth(request, onsuccess='/userprofile/', onfail='/#login/', onwtf='/#dailydeals'):
     username = request.POST.get('loginEmail', False)
     password = request.POST.get('loginPassword', False)
+=======
+def login_and_auth(request, onsuccess='/userprofile/', onfail='/#logins/'):
+    username = request.POST.get('username', False)
+    password = request.POST.get('password', False)
+>>>>>>> 9d431dba593dda47fb09ab28845a750ed2a8b78f
     user = authenticate(username=username, password=password)
     # if user is not None:
     #     if user.is_active:

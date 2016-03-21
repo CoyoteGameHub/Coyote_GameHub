@@ -19,9 +19,15 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+<<<<<<< HEAD
     url(r'^', include('home.urls'), name = 'home'),
     # url(r'^login/', include('home.urls'), name = 'login'),
     # url(r'^auth/', include('home.urls'), name = 'auth'),
+=======
+    url(r'^$', include('home.urls'), name = 'home'),
+    url(r'^login/', include('home.urls'), name = 'login'),
+    url(r'^auth/', include('home.urls'), name = 'auth'),
+>>>>>>> 9d431dba593dda47fb09ab28845a750ed2a8b78f
     url(r'^userprofile/', include('userprofile.urls'), name = 'userprofile'),
 
 ]
