@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 def index(request):
     return render(request, 'home/index.html')
 
-def login_and_auth(request, onsuccess='/userprofile/', onfail='/#login/'):
+def login_and_auth(request, onsuccess='/userprofile/', onfail='/#logins/'):
     username = request.POST.get('username', False)
     password = request.POST.get('password', False)
     user = authenticate(username=username, password=password)
