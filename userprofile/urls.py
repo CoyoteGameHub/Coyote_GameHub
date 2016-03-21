@@ -6,5 +6,5 @@ app_name = 'userprofile'
 
 from . import views
 urlpatterns = [
-    url(r'^userprofile', views.index, name ='index'),  
+    url(r'^', views.index, name ='index'),  
 ]

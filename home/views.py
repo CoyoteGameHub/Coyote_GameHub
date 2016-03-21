@@ -7,30 +7,28 @@ from django.contrib.auth.models import User
 def index(request):
     return render(request, 'home/index.html')
 
-def login_and_auth(request, onsuccess='/userprofile/', onfail='/#login/'):
-    username = request.POST.get('username', False)
-    password = request.POST.get('password', False)
+def login_and_auth(request, onsuccess='/userprofile/', onfail='/#login/', onwtf='/#dailydeals'):
+    username = request.POST.get('loginEmail', False)
+    password = request.POST.get('loginPassword', False)
     user = authenticate(username=username, password=password)
-    if user is not None:
-        # if user.is_active:
-        #     login(request, user)
-        #     return redirect(onsuccess)
-        # else:
-        #     return redirect(onfail)
-        login(request, user)
-        return redirect(onsuccess)
-    else:
-        return redirect(onfail)
-
-def signup_user(request, userexists="/#login/"):
-    post = request.POST
-    user = create_user(username=post['email'], email=post['email'], password=post['password'])
-    return login_and_auth(request)
-    # if not user_exists(post['email']): 
-    #     user = create_user(username=post['email'], email=post['email'], password=post['password'])
-    #     return login_and_auth(request)
+    # if user is not None:
+    #     if user.is_active:
+    #         login(request, user)
+    #         return redirect(onsuccess)
+    #     else:
+    #         return redirect(onwtf)
+        
     # else:
-    #     return redirect(userexists)
+    #     return redirect(onfail)
+    return redirect(onsuccess)
+
+def signup_user(request, userexists="/"):
+    post = request.POST
+    if not user_exists(post['email']): 
+        user = create_user(username=post['email'], email=post['email'], password=post['password'])
+        return login_and_auth(request)
+    else:
+        return redirect(userexists)
 
 
 

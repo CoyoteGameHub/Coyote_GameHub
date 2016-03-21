@@ -128,3 +128,5 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = '/Users/lawrencethai/Documents/Github/beta/assets'
+
+LOGIN_URL = '/'

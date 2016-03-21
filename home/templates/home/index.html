@@ -226,6 +226,7 @@
                         <button type="submit" name="submit"  class="btn btn-primary btn-block">Sign Up Now</button>
                       </div>
                       <div class="form-notify"></div>
+                      <input type="hidden" name="next" value="{{ next }}" />
                     </form> <!-- #contactForm -->
                   </div>
                 </div>
@@ -310,12 +311,12 @@
                   <div class="col-inner">
                     <form action='/auth/' method='POST' class="_default">{% csrf_token %}
                       <div class="form-group required">
-                        <label class="form-label" for="lginEmail">Email Address</label>
-                        <input class="form-control" id="loginEmail" type="text" name="loginEmail">
+                        <label class="form-label" for="loginEmail">Email Address</label>
+                        <input class="form-control" id="loginEmail" type="text" name="email">
                       </div>
                       <div class="form-group required">
                         <label class="form-label" for="loginPassword">Password</label>
-                        <input class="form-control" type="password" id="loginPassword" type="text" name="loginPassword">
+                        <input class="form-control" type="password" id="loginPassword" type="text" name="password">
                       </div>
                       <!-- <div class="form-group required">
                         <label class="form-label" for="contactPassword">Password</label>
