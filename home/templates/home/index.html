@@ -207,15 +207,15 @@
                   <div class="col-inner">
                     <form action='/signup/' method="POST" class="_default">{% csrf_token %}
                       <div data-role="fieldcontain" class="form-group required">
-                        <label class="form-label" for="contactName">Your name</label>
-                        <input class="form-control" id="contactName" type="text" name="name">
+                        <label class="form-label" for="name">Your name</label>
+                        <input class="form-control" id="name" type="text" name="name">
                       </div>
                       <div data-role="fieldcontain" class="form-group required">
-                        <label class="form-label" for="contactEmail">Email address</label>
-                        <input class="form-control" id="contactEmail" type="text" name="email">
+                        <label class="form-label" for="email">Email address</label>
+                        <input class="form-control" id="email" type="text" name="email">
                       </div>
                       <div data-role="fieldcontain" class="form-group required">
-                        <label class="form-label" for="contactPassword">Password</label>
+                        <label class="form-label" for="password">Password</label>
                         <input class="form-control" type="password" id="contactPassword" name="password"></input>
                       </div>
                       <div data-role="fieldcontain" class="form-group required">
@@ -226,7 +226,6 @@
                         <button type="submit" name="submit"  class="btn btn-primary btn-block">Sign Up Now</button>
                       </div>
                       <div class="form-notify"></div>
-                      <input type="hidden" name="next" value="{{ next }}" />
                     </form> <!-- #contactForm -->
                   </div>
                 </div>
@@ -311,12 +310,12 @@
                   <div class="col-inner">
                     <form action='/auth/' method='POST' class="_default">{% csrf_token %}
                       <div class="form-group required">
-                        <label class="form-label" for="loginEmail">Email Address</label>
-                        <input class="form-control" id="loginEmail" type="text" name="email">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input class="form-control" id="email" type="text" name="email">
                       </div>
                       <div class="form-group required">
-                        <label class="form-label" for="loginPassword">Password</label>
-                        <input class="form-control" type="password" id="loginPassword" type="text" name="password">
+                        <label class="form-label" for="password">Password</label>
+                        <input class="form-control" type="password" id="password" type="text" name="password">
                       </div>
                       <!-- <div class="form-group required">
                         <label class="form-label" for="contactPassword">Password</label>

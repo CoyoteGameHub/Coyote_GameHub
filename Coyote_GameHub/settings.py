@@ -31,15 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'home',
+    'store',
+    'userprofile',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home',
-    'store',
-    'userprofile',
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -128,5 +129,3 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = '/Users/lawrencethai/Documents/Github/beta/assets'
-
-LOGIN_URL = '/'

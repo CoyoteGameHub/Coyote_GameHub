@@ -4,31 +4,30 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
+def loginview(request):
+    c = {}
+    c.update(csrf(request))
+    return render_to_response('home/index.html', c)
+
+@login_required(login_url='/login/', redirect_field_name=None)
 def index(request):
-    return render(request, 'home/index.html')
+    return render(request, 'home/userprofile.html')
 
-<<<<<<< HEAD
-def login_and_auth(request, onsuccess='/userprofile/', onfail='/#login/', onwtf='/#dailydeals'):
-    username = request.POST.get('loginEmail', False)
-    password = request.POST.get('loginPassword', False)
-=======
-def login_and_auth(request, onsuccess='/userprofile/', onfail='/#logins/'):
-    username = request.POST.get('username', False)
-    password = request.POST.get('password', False)
->>>>>>> 9d431dba593dda47fb09ab28845a750ed2a8b78f
+def login_and_auth(request, onsuccess='/', onfail='/login/', onwtf='/#dailydeals'):
+    username = request.POST['email']
+    password = request.POST['password']
     user = authenticate(username=username, password=password)
-    # if user is not None:
-    #     if user.is_active:
-    #         login(request, user)
-    #         return redirect(onsuccess)
-    #     else:
-    #         return redirect(onwtf)
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            return redirect(onsuccess)
+        else:
+            return redirect(onwtf)
         
-    # else:
-    #     return redirect(onfail)
-    return redirect(onsuccess)
+    else:
+        return redirect(onfail)
 
-def signup_user(request, userexists="/"):
+def signup_user(request, userexists="/login/"):
     post = request.POST
     if not user_exists(post['email']): 
         user = create_user(username=post['email'], email=post['email'], password=post['password'])
@@ -49,3 +48,4 @@ def create_user(username, email, password):
     user.set_password(password)
     user.save()
     return user
+
