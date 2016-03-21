@@ -4,10 +4,13 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
-def loginview(request):
-    c = {}
-    c.update(csrf(request))
-    return render_to_response('home/index.html', c)
+def loginview(request, onsuccess='/', onfail='home/index.html'):
+    if request.user.is_authenticated():
+        return redirect(onsuccess)
+    else:
+        c = {}
+        c.update(csrf(request))
+        return render_to_response(onfail, c)
 
 @login_required(login_url='/login/', redirect_field_name=None)
 def index(request):
