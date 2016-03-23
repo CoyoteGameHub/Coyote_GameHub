@@ -56,6 +56,14 @@ def create_user(username, email, password):
 def game_one(request):
     return render(request, 'home/game1.html')
 
+@login_required(login_url='/login/', redirect_field_name=None)
+def game_two(request):
+    return render(request, 'home/game1.html')
+
+@login_required(login_url='/login/', redirect_field_name=None)
+def game_three(request):
+    return render(request, 'home/game1.html')
+
 def log_out(request, onlogout='/'):
     logout(request)
     return redirect(onlogout)
