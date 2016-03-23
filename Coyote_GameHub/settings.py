@@ -80,12 +80,8 @@ WSGI_APPLICATION = 'Coyote_GameHub.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'coyotegamehub',
-        'USER': 'coyotegamehub',
-        'PASSWORD': 'coyote92407',
-        'HOST': 'mysql.coyotegamehub.ml',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
