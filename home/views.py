@@ -58,11 +58,11 @@ def game_one(request):
 
 @login_required(login_url='/login/', redirect_field_name=None)
 def game_two(request):
-    return render(request, 'home/game1.html')
+    return render(request, 'home/game2.html')
 
 @login_required(login_url='/login/', redirect_field_name=None)
 def game_three(request):
-    return render(request, 'home/game1.html')
+    return render(request, 'home/game3.html')
 
 def log_out(request, onlogout='/'):
     logout(request)
