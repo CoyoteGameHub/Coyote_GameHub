@@ -11,5 +11,8 @@ urlpatterns = [
     url(r'^auth/', views.login_and_auth, name ='login_and_auth'),
     url(r'^signup/', views.signup_user, name ='signup_user'),
     url(r'^login/', views.loginview, name ='loginview'),
+    url(r'^game1/', views.game_one, name = 'game_one'),
+    url(r'^logout/', views.log_out, name = 'log_out'),
+
 
 ]

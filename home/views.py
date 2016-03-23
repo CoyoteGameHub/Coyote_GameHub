@@ -1,6 +1,6 @@
 from django.template.context_processors import csrf
 from django.shortcuts import render_to_response, render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
@@ -52,3 +52,10 @@ def create_user(username, email, password):
     user.save()
     return user
 
+@login_required(login_url='/login/', redirect_field_name=None)
+def game_one(request):
+    return render(request, 'home/game1.html')
+
+def log_out(request, onlogout='/'):
+    logout(request)
+    return redirect(onlogout)
