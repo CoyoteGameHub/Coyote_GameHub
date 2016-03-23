@@ -13,8 +13,8 @@ urlpatterns = [
     url(r'^login/', views.loginview, name ='loginview'),
     url(r'^game1/', views.game_one, name = 'game_one'),
     url(r'^logout/', views.log_out, name = 'log_out'),
-    url(r'^game2/', views.game_one, name = 'game_two'),
-    url(r'^game3/', views.game_one, name = 'game_three'),
+    url(r'^game2/', views.game_two, name = 'game_two'),
+    url(r'^game3/', views.game_three, name = 'game_three'),
 
 
 ]
