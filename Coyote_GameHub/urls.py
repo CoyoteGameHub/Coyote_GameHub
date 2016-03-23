@@ -25,5 +25,8 @@ urlpatterns = [
     url(r'^login/', include('home.urls'), name = 'login'),
     url(r'^game1/', include('home.urls'), name = 'game1'),
     url(r'^logout/', include('home.urls'), name = 'logout'),
+    url(r'^game2/', include('home.urls'), name = 'game2'),
+    url(r'^game3/', include('home.urls'), name = 'game3'),
+
 
 ]
